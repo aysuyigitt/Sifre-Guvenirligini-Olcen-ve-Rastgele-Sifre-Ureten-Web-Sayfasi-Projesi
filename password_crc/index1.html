@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brute Force Attacks</title>
+    
+    <link rel="stylesheet" href="style2.css"/>
+    <script src="bower_components/zxcvbn/dist/zxcvbn.js">
+        
+    </script>
+</head>
+<body>
+    
+    <header class="bg-dark-blue">
+        <div class="container">
+            <nav id="navbar">
+                <h1 class="heading-small">ŞİFRENİZ GÜVENDE Mİ ?</h1><br>
+            </nav>
+        </div>
+    </header>
+
+    <div class="input-container">
+        <p class="test">Şifre Testi Yapın</p> 
+       
+    </div>
+
+    <div class="input-box">
+        <input type="password" name="password" id="password" placeholder="Şifre Giriniz..." onkeyup="sifrele()" >
+        <img src="eye1.png" name="eye" id="eye" onclick="toogle()">
+    </div>
+
+    <div class="button-container">
+        <h2>Random Şifre Üretici</h2>
+        <input type="text" name="password" id="passwordInput"> <!-- Type özelliği text olarak değiştirildi -->
+        <button id="createButton" onclick="generatePassword()">Oluştur</button>
+    </div>
+
+    <article class="item">
+        <h4 class="lowertitle">BÜYÜK-KÜÇÜK HARF</h4>
+        <p class="lowerUpper">Güçlü ve güveni bir şifre oluşturmak için<br/> 
+            şifrenizde en az bir tane büyük, en az bir<br/> 
+                tane küçük harf oluşturun. 
+        </p>
+    </article>
+
+    <article class="item">
+        <h4 class="numbertitle">RAKAM</h4>
+        <p class="number"> Şifrenizi daha güvende tutmak için <br/> 
+            en az bir tane rakam bulundurun.
+        </p>
+    </article>
+
+    <article class="item">
+        <h4 class="symboltitle">SEMBOL</h4>
+        <p class="symbol"> Güvenli şifreler oluşturmak için parolanızın <br/>
+            içine mutlaka semboller eklemeyi unutmayın.
+       
+        </p>
+    </article>
+
+    <article class="item">
+        <h4 class="logTitle">UZUNLUK</h4>
+        <p class="log">Şifre ne kadar uzunsa,genellikle o kadar <br/>
+            güvenlidir. Şifreniniz mümkünse en az  12 <br/>
+            karakter uzunluğunda olsun.
+        </p>
+    </article>
+
+    
+    <p class="pp">Şifrenin Kırılma Süresi:</p>
+   
+
+    <span id ="complexity-span" class="pmshow"> 
+        
+    
+    <script >
+
+function sifrele(){
+var sifre=document.getElementById("password").value;
+var sifre2=zxcvbn(sifre);
+var s3=JSON.stringify(sifre2);
+s3=s3.split(",");
+
+for(i=0;i<s3.length;i++)
+console.log(s3[i]);
+ 
+document.getElementById("complexity-span").innerHTML=('100/Saat: '+s3[14].split(":")[2]+'<br>'+
+'10/Saniye : '+s3[15].split(":")[1]+'<br>'+'10k/Saniyede :'+s3[16].split(":")[1]+'<br>'+'10B/Saniye : '+s3[17].split(":")[1]+'<br>');
+
+}
+function generatePassword() {
+            var password = createPass(); // Şifre oluşturuluyor
+            document.getElementById("passwordInput").value = password; // Oluşturulan şifre input alanına atanıyor
+        }
+    
+        function createPass() {
+            var psw = "";
+            var str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ½#?/*#+!";
+            for (var i = 0; i < 12; i++) {
+                var char = Math.floor(Math.random() * str.length);
+                psw += str.charAt(char);
+            }
+            return psw; // Oluşturulan şifre döndürülüyor
+        }
+</script>
+<script src="script2.js"></script>
+</body>
+</html>
