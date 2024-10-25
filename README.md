@@ -15,9 +15,13 @@ toogle() fonksiyonu, kullanıcının şifreyi gösterip gizlemesini sağlar. Kul
 Bu arayüz, bir kullanıcının girdiği şifrenin güvenlik seviyesini kontrol eden bir mekanizmayı uygular. Kullanıcının girdiği şifre, büyük harf, küçük harf, rakam ve sembol içeriyorsa, bu kriterleri karşıladığına dair renkli göstergeler verilir. Her bir şart için ayrı bir kontrol yapılır.
 Büyük ve Küçük Harf Kontrolü: Girilen şifrede hem büyük hem de küçük harf bulunup bulunmadığı kontrol edilir. Eğer şifre hem büyük hem de küçük harf içeriyorsa, ilgili alanların (HTML'de muhtemelen metin veya giriş kutuları) rengi yeşile dönüştürülür; aksi halde siyah olur.
 • Rakam Kontrolü: Girilen şifrede en az bir rakam bulunup bulunmadığı kontrol edilir. Eğer şifre bir rakam içeriyorsa, ilgili alanın rengi yeşile dönüştürülür; aksi halde siyah olur.
+
 • Sembol Kontrolü: Girilen şifrede en az bir sembol bulunup bulunmadığı kontrol edilir. Eğer şifre bir sembol içeriyorsa, ilgili alanın rengi yeşile dönüştürülür; aksi halde siyah olur.
+
 • Uzunluk Kontrolü: Girilen şifrenin uzunluğu 12 karakter veya daha fazlaysa, ilgili alanın rengi yeşile dönüştürülür; aksi halde siyah olur.
+
 • Büyük/Küçük Harf ve Rakam Zorunluluğu: Şifrenin hem büyük/küçük harf, hem de rakam içermesi gerekiyorsa, girdi kutusunun kenar rengi kırmızıya dönüştürülür; aksi halde siyah olur.
+
 • Güçlü Şifre Kontrolü: Şifrenin büyük/küçük harf, rakam, sembol içerip ve uzunluğu 12 karakter veya daha fazlaysa, girdi kutusunun kenar rengi yeşile dönüştürülür.
 
 **3.Adım: Şifrenin Kırılma Süresi**
